@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/app.jpg"></ion-img>
+      </ion-avatar>  
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button
+       defaultHref="/"
+       text="Regresar"
+       color="secondary"
+       mode="ios">
+      </ion-back-button>  
+    </ion-buttons>
+    <ion-title>Raditz App</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+
+  <form [formGroup]="formularioLogin">
+    <div class="input-group">
+
+    <ion-item class="email"> 
+      <ion-icon color="secondary" name="mail-outline"></ion-icon>
+      <ion-label>Email: </ion-label>
+      <ion-input formControlName="email" type="email" placeholder="E-mail"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="secondary" name="lock-closed-outline"></ion-icon>
+      <ion-label>Password: </ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Contraseña"
+                 required>
+      </ion-input>
+      
+    </ion-item> 
+  </div>
+
+    <ion-button [disabled] ="formularioLogin.invalid"
+              type="submit" (click)="ingresar()" expand="block" color="secondary" routerLink="/inicio">
+        Ingresar
+    </ion-button>
+
+    <ion-button type="button" expand="block" color="light" fill="clear" routerLink="/registro">Sin Cuenta? Registrate! 
+    </ion-button>
+
+    <ion-button type="button" expand="block" color="tertiary">
+      <ion-icon name="logo-facebook" slot="start"></ion-icon>
+      Ingresa con Facebook
+    </ion-button>
+    <ion-button type="button" expand="block" color="tertiary">
+      <ion-icon name="logo-apple" slot="start"></ion-icon>
+      Ingresa con Apple
+    </ion-button>
+    <ion-button type="button" expand="block" color="tertiary">
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+      Ingresa con Google
+    </ion-button>
+
+  </form>
+</ion-content>

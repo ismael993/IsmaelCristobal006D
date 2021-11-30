@@ -1,0 +1,39 @@
+<ion-header class="ion-padding">
+  
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/app.jpg"></ion-img>
+      </ion-avatar>
+        
+      
+    </ion-buttons>
+    <ion-label><ion-title color="light" class="titulo">Inicio</ion-title>   </ion-label>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <h2><img src="/assets/shiro.png"/></h2>
+  <br>
+    <ion-title class="ion-text-center" color="light"> Bienvenido Usuario</ion-title>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  <ion-button color="danger" (click)="salir()" expand="block" shape="round">
+    Salir 
+  </ion-button>
+</ion-content>

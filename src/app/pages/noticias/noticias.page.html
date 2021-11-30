@@ -1,0 +1,37 @@
+<ion-header class= "ion-no-border">
+  <ion-toolbar color= "dark">
+    <ion-button slot = "end">
+      <ion-avatar>
+        <ion-img src="/assets/app.jpg"></ion-img>
+      </ion-avatar>
+    </ion-button>
+    <ion-buttons slot="start">
+      <ion-back-button 
+       defaultHref="/"
+       text="Regresar"
+       color="Success"
+       mode="ios">
+      </ion-back-button>  
+    </ion-buttons>
+    <ion-title>Temperaturas del Día</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+  <h1>Temperaturas </h1>
+</ion-item>
+<ion-content color="white" *ngIf = 'temperatura'>
+  <ion-item>
+    <p>Temperaura: {{ temperatura.temperature }}</p>
+    <p>Viento: {{ temperatura.wind }}</p>
+    <p>Descripción: {{ temperatura.description }}</p>
+  </ion-item>
+  <ion-item>
+    <h1>Temperaturas de los siguientes 3 dias</h1>
+  </ion-item>
+  <ion-item *ngFor = 'let f of forecast'>
+    <p>Dia: {{ f.day }}</p>
+    <p>Temperatura: {{f.temperature}}</p>
+    <p>Viento: {{f.wind}}</p>
+  </ion-item>
+</ion-content>
